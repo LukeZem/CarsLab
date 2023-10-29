@@ -23,7 +23,7 @@ app.use(helmet());
 // START ROUTES //
 
 app.post("/cars", async (req, res) => { // Route 1
-    let newCar = req.body.data
+    let newCar = req.body;
     console.log(newCar);
     let dbResponse = await Car.create(newCar);
     res.send(dbResponse);

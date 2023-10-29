@@ -25,9 +25,16 @@ const ShowAllCars = ({ cars, setCars }) => {
     return (
         <div>
             <h1>Cars List</h1>
-            {cars.map((car) => {
-                `<p>${car}</p>`
-            })}
+            {cars.map((car) => (
+                <div key={car._id}>
+                    <h3>{car.name}</h3>
+                    <p>{car.make}</p>
+                    <p>{car.model}</p>
+                    <p>{car.year}</p>
+
+                </div>
+            ))}
+
         </div>
     )
 }

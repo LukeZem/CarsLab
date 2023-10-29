@@ -25,7 +25,7 @@ const NewCar = ({ setCars }) => {
         try {
             const response = await axios({
                 method: "POST",
-                url: "/server/carDatas",
+                url: "/server/cars",
                 data: carData
             });
             console.log(response);
@@ -36,10 +36,17 @@ const NewCar = ({ setCars }) => {
             console.error(e)
             console.log("error submitting data to server");
         }
+        setCarData({
+            name: "",
+            make: "",
+            model: "",
+            year: ""
+        })
     };
 
     return (
         <div>
+            <h1>New Car</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input
